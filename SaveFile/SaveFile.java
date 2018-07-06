@@ -9,12 +9,12 @@ import java.io.IOException;
 
 public class SaveFile {
 
-    private String text;
+    private String textToFile;
 
     public void save(File file) {
         try {
             saveFile(file);
-        } catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
@@ -23,14 +23,15 @@ public class SaveFile {
         }
     }
 
-    private void saveFile(File file) throws Exception{
-        this.text = text;
+    private void saveFile(File file) throws Exception {
         BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-        writer.write("Random string of charakter");
+        writer.write(textToFile);
         writer.close();
     }
 
-    private void addText(String text) {
-       // String
+    public void setTextToFile(String textToFile) {
+        this.textToFile = textToFile;
     }
 }
+
+
